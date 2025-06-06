@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Roteiros Univértix</title>
+    <link rel="stylesheet" href="ScriptGenerator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Gerador de Roteiros Univértix</h1>
+            <p>Preencha os campos para criar roteiros impactantes e alinhados com a identidade da Univértix.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="roteiroForm">
+                <div class="form-group">
+                    <label for="temaVideo">🎯 Tema do vídeo (Reels) <span class="required">*</span></label>
+                    <input type="text" id="temaVideo" name="temaVideo" placeholder="Ex: Hospital Veterinário da Univértix: prática real desde o primeiro dia de aula." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="objetivoVideo">🎯 Objetivo do vídeo <span class="required">*</span></label>
+                    <select id="objetivoVideo" name="objetivoVideo" required>
+                        <option value="">Selecione um objetivo</option>
+                        <option value="Informar">Informar</option>
+                        <option value="Atrair alunos">Atrair alunos</option>
+                        <option value="Inspirar/Emocionar">Inspirar/Emocionar</option>
+                        <option value="Divulgar estrutura/infra">Divulgar estrutura/infra</option>
+                        <option value="Valorizar experiências reais">Valorizar experiências reais</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="publicoAlvo">👥 Público-alvo <span class="required">*</span></label>
+                    <select id="publicoAlvo" name="publicoAlvo" required>
+                        <option value="">Selecione o público</option>
+                        <option value="Estudantes do ensino médio">Estudantes do ensino médio</option>
+                        <option value="Vestibulandos">Vestibulandos</option>
+                        <option value="Pais">Pais</option>
+                        <option value="Seguidores em geral">Seguidores em geral</option>
+                        <option value="Comunidade acadêmica">Comunidade acadêmica</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="duracaoEstimada">🕒 Duração estimada <span class="required">*</span></label>
+                    <input type="text" id="duracaoEstimada" name="duracaoEstimada" placeholder="Ex: 30 segundos, até 1 minuto" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagemPrincipal">📢 Mensagem principal (frase de impacto ou ideia-chave) <span class="required">*</span></label>
+                    <textarea id="mensagemPrincipal" name="mensagemPrincipal" placeholder="Qual a mensagem essencial que deve estar presente no roteiro?" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>🧠 Tom de voz desejado <span class="required">*</span></label>
+                    <div class="tone-grid">
+                        <div class="tone-option">
+                            <input type="radio" id="tomLeveJovem" name="tomDeVoz" value="Leve e jovem" required>
+                            <label for="tomLeveJovem">Leve e jovem</label>
+                        </div>
+                        <div class="tone-option">
+                            <input type="radio" id="tomDiretoInspirador" name="tomDeVoz" value="Direto e inspirador">
+                            <label for="tomDiretoInspirador">Direto e inspirador</label>
+                        </div>
+                        <div class="tone-option">
+                            <input type="radio" id="tomEmocionalInstitucional" name="tomDeVoz" value="Emocional e institucional">
+                            <label for="tomEmocionalInstitucional">Emocional e institucional</label>
+                        </div>
+                        <div class="tone-option">
+                            <input type="radio" id="tomCriativoProvocador" name="tomDeVoz" value="Criativo e provocador">
+                            <label for="tomCriativoProvocador">Criativo e provocador</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sugestoesCenas">📸 Sugestões de cenas ou imagens importantes (opcional)</label>
+                    <textarea id="sugestoesCenas" name="sugestoesCenas" placeholder="Ex: Mostrar aluno realizando atendimento real com professor ao lado."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="diferencialUnivertix">🧩 Diferencial da Univértix que precisa ser evidenciado <span class="required">*</span></label>
+                    <select id="diferencialUnivertix" name="diferencialUnivertix" required>
+                        <option value="">Selecione um diferencial</option>
+                        <option value="Prática desde o início">Prática desde o início</option>
+                        <option value="Estrutura física completa">Estrutura física completa</option>
+                        <option value="Proximidade com professores">Proximidade com professores</option>
+                        <option value="Projetos de extensão">Projetos de extensão</option>
+                        <option value="Metodologia ativa">Metodologia ativa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="estruturaPadrao">🧱 Deseja seguir a estrutura padrão? <span class="required">*</span></label>
+                    <select id="estruturaPadrao" name="estruturaPadrao" required>
+                        <option value="">Escolha</option>
+                        <option value="sim">Sim (Abertura → Situação → Transformação → Emoção → CTA)</option>
+                        <option value="não">Não (gerar um roteiro alternativo mais livre)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoesAdicionais">🧾 Observações adicionais (opcional)</label>
+                    <textarea id="observacoesAdicionais" name="observacoesAdicionais" placeholder="Permite adicionar contexto, frases específicas, eventos ou datas."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Gerar Roteiro</button>
+            </form>
+
+            <div class="loading" id="loadingState">
+                <div class="spinner"></div>
+                <p>Gerando seu roteiro, por favor aguarde...</p>
+            </div>
+
+            <div class="result" id="resultState">
+                <h3>✨ Roteiro Gerado:</h3>
+                <div class="result-content" id="roteiroContent"></div>
+                <button class="copy-btn" onclick="copyRoteiro()">Copiar Roteiro</button>
+            </div>
+
+            <div class="error" id="errorState">
+                <p>Ocorreu um erro ao gerar o roteiro. Por favor, tente novamente.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="ScriptGenerator.js"></script>
+</body>
+</html>

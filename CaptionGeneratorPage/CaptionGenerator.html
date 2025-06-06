@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Legendas Univértix</title>
+    <link rel="stylesheet" href="CaptionGenerator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Gerador de Legendas</h1>
+            <p>Crie legendas criativas e autênticas para a Univértix</p>
+        </div>
+
+        <div class="form-container">
+            <form id="captionForm">
+                <div class="form-group">
+                    <label for="tema">🎯 Tema Central <span class="required">*</span></label>
+                    <input type="text" id="tema" name="tema" required 
+                           placeholder="Ex: Semana da Enfermagem, novo curso, vestibular...">
+                </div>
+
+                <div class="form-group">
+                    <label for="objetivo">🧠 Objetivo da Postagem <span class="required">*</span></label>
+                    <select id="objetivo" name="objetivo" required>
+                        <option value="">Selecione o objetivo</option>
+                        <option value="engajar">Engajar o público</option>
+                        <option value="informar">Informar sobre algo</option>
+                        <option value="anunciar">Anunciar novidade</option>
+                        <option value="inspirar">Inspirar e motivar</option>
+                        <option value="identificacao">Gerar identificação</option>
+                        <option value="promover">Promover evento/curso</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>🎭 Tom/Emoção da Legenda <span class="required">*</span></label>
+                    <div class="tone-grid">
+                        <div class="tone-option">
+                            <input type="radio" id="inspirador" name="tom" value="inspirador" required>
+                            <label for="inspirador">✨ Inspirador e Ousado</label>
+                        </div>
+                        <div class="tone-option">
+                            <input type="radio" id="ironico" name="tom" value="ironico" required>
+                            <label for="ironico">😏 Irônico e Criativo</label>
+                        </div>
+                        <div class="tone-option">
+                            <input type="radio" id="reflexivo" name="tom" value="reflexivo" required>
+                            <label for="reflexivo">🤔 Reflexivo e Direto</label>
+                        </div>
+                        <div class="tone-option">
+                            <input type="radio" id="divertido" name="tom" value="divertido" required>
+                            <label for="divertido">😄 Divertido e Provocador</label>
+                        </div>
+                        <div class="tone-option">
+                            <input type="radio" id="serio" name="tom" value="serio" required>
+                            <label for="serio">🎓 Sério e Institucional</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="publico">👤 Público-Alvo Principal <span class="required">*</span></label>
+                    <select id="publico" name="publico" required>
+                        <option value="">Selecione o público</option>
+                        <option value="ensino-medio">Alunos do Ensino Médio</option>
+                        <option value="universitarios">Universitários</option>
+                        <option value="pais">Pais de Estudantes</option>
+                        <option value="ex-alunos">Ex-alunos</option>
+                        <option value="professores">Professores/Educadores</option>
+                        <option value="profissionais">Profissionais da Área</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="palavrasChave">💡 Palavras-chave (Opcional)</label>
+                    <input type="text" id="palavrasChave" name="palavrasChave" 
+                           placeholder="Ex: Enfermagem, TCC, futuro, inclusão, inovação...">
+                </div>
+
+                <div class="form-group">
+                    <label for="evitar">❌ Palavras/Expressões para Evitar (Opcional)</label>
+                    <input type="text" id="evitar" name="evitar" 
+                           placeholder="Ex: sonhar alto, nunca desista, termos clichês...">
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoes">📎 Observações Adicionais (Opcional)</label>
+                    <textarea id="observacoes" name="observacoes" 
+                              placeholder="Detalhes importantes, menções específicas, contexto adicional..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    🚀 Gerar Legenda Criativa
+                </button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Criando sua legenda personalizada...</p>
+            </div>
+
+            <div class="error" id="error"></div>
+
+            <div class="result" id="result">
+                <h3>✨ Sua Legenda Criada:</h3>
+                <div class="result-content" id="resultContent"></div>
+                <button class="copy-btn" onclick="copyToClipboard()">📋 Copiar Legenda</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="CaptionGenerator.js"></script>
+</body>
+</html>

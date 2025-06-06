@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Copy Visual Univértix</title>
+    <link rel="stylesheet" href="VisualCopyGenerator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Gerador de Copy Visual Univértix</h1>
+            <p>Crie copys impactantes para seus designs com este formulário.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="visualCopyForm">
+                <div class="form-group">
+                    <label for="objetivoPeca">🎯 Objetivo da peça <span class="required">*</span></label>
+                    <select id="objetivoPeca" name="objetivoPeca" required>
+                        <option value="">Selecione o objetivo</option>
+                        <option value="Gerar cliques">Gerar cliques</option>
+                        <option value="Chamar atenção no feed">Chamar atenção no feed</option>
+                        <option value="Converter em leads">Converter em leads</option>
+                        <option value="Inspirar/engajar">Inspirar/engajar</option>
+                        <option value="Informar rapidamente">Informar rapidamente</option>
+                        <option value="Gerar conexão emocional">Gerar conexão emocional</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>🎨 Formato da peça <span class="required">*</span></label>
+                    <div class="format-grid">
+                        <div class="option-item">
+                            <input type="checkbox" id="formatoPost" name="formatoPeca" value="Post estático" required>
+                            <label for="formatoPost">Post estático</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="formatoCarrossel" name="formatoPeca" value="Carrossel">
+                            <label for="formatoCarrossel">Carrossel</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="formatoStories" name="formatoPeca" value="Stories">
+                            <label for="formatoStories">Stories</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="formatoReels" name="formatoPeca" value="Reels/vídeo">
+                            <label for="formatoReels">Reels/vídeo</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="formatoBanner" name="formatoPeca" value="Banner institucional">
+                            <label for="formatoBanner">Banner institucional</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="formatoSite" name="formatoPeca" value="Site/landing page">
+                            <label for="formatoSite">Site/landing page</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="formatoAnuncio" name="formatoPeca" value="Anúncio pago">
+                            <label for="formatoAnuncio">Anúncio pago</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="temaCentral">🧵 Tema central / assunto da peça <span class="required">*</span></label>
+                    <input type="text" id="temaCentral" name="temaCentral" placeholder="Ex: Matrículas abertas para Medicina Veterinária." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagemPrincipal">🧠 Mensagem principal (ideia-chave a ser transmitida) <span class="required">*</span></label>
+                    <textarea id="mensagemPrincipal" name="mensagemPrincipal" placeholder="Ex: A Univértix oferece prática desde o primeiro semestre." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>🧰 Tom da comunicação <span class="required">*</span></label>
+                    <div class="tone-grid">
+                        <div class="option-item">
+                            <input type="radio" id="tomJovemOusado" name="tomComunicacao" value="Jovem e ousado" required>
+                            <label for="tomJovemOusado">Jovem e ousado</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="tomEmocionalAspiracional" name="tomComunicacao" value="Emocional e aspiracional">
+                            <label for="tomEmocionalAspiracional">Emocional e aspiracional</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="tomDiretoProvocativo" name="tomComunicacao" value="Direto e provocativo">
+                            <label for="tomDiretoProvocativo">Direto e provocativo</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="tomInstitucionalElegante" name="tomComunicacao" value="Institucional e elegante">
+                            <label for="tomInstitucionalElegante">Institucional e elegante</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="tomInspiradorLeve" name="tomComunicacao" value="Inspirador e leve">
+                            <label for="tomInspiradorLeve">Inspirador e leve</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="headlineDesejada">🧩 Headline desejada ou palavra-chave de destaque (opcional)</label>
+                    <input type="text" id="headlineDesejada" name="headlineDesejada" placeholder="Ex: Aulas práticas desde o dia 1!">
+                </div>
+
+                <div class="form-group">
+                    <label>💬 Precisa de micro-copy? <span class="required">*</span></label>
+                    <div class="option-item">
+                        <input type="radio" id="microCopySim" name="precisaMicroCopy" value="sim" required>
+                        <label for="microCopySim">Sim</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="microCopyNao" name="precisaMicroCopy" value="não">
+                        <label for="microCopyNao">Não</label>
+                    </div>
+                </div>
+                <div class="form-group conditional-field" id="contextoMicroCopyField">
+                    <label for="contextoMicroCopy">Contexto de uso do micro-copy:</label>
+                    <textarea id="contextoMicroCopy" name="contextoMicroCopy" placeholder="Ex: botão 'Saiba Mais', legenda de imagem, descrição curta, card 2 do carrossel…"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>🖼️ Deseja incluir storytelling visual? <span class="required">*</span></label>
+                    <div class="option-item">
+                        <input type="radio" id="storytellingSim" name="incluirStorytelling" value="sim" required>
+                        <label for="storytellingSim">Sim</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="storytellingNao" name="incluirStorytelling" value="não">
+                        <label for="storytellingNao">Não</label>
+                    </div>
+                </div>
+                <div class="conditional-field" id="storytellingFields">
+                    <div class="form-group">
+                        <label for="ganchoStorytelling">Etapa 1: Gancho (título ou imagem com texto forte)</label>
+                        <input type="text" id="ganchoStorytelling" name="ganchoStorytelling" placeholder="Ex: 'Seu futuro começa agora!'">
+                    </div>
+                    <div class="form-group">
+                        <label for="situacaoStorytelling">Etapa 2: Situação (contexto)</label>
+                        <textarea id="situacaoStorytelling" name="situacaoStorytelling" placeholder="Ex: 'Cansado de teoria? Quer prática de verdade?'"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="solucaoStorytelling">Etapa 3: Solução (o diferencial)</label>
+                        <textarea id="solucaoStorytelling" name="solucaoStorytelling" placeholder="Ex: 'Na Univértix, você vive a profissão desde o 1º semestre!'"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="provaStorytelling">Etapa 4: Prova (número, fato ou depoimento)</label>
+                        <textarea id="provaStorytelling" name="provaStorytelling" placeholder="Ex: 'Mais de 1000 alunos formados e inseridos no mercado.'"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="acaoStorytelling">Etapa 5: Ação (CTA)</label>
+                        <input type="text" id="acaoStorytelling" name="acaoStorytelling" placeholder="Ex: 'Inscreva-se já e comece a praticar!'">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>🔄 A copy será adaptada para outros formatos? <span class="required">*</span></label>
+                    <div class="option-item">
+                        <input type="radio" id="adaptacaoSim" name="adaptacaoFormatos" value="sim" required>
+                        <label for="adaptacaoSim">Sim</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="adaptacaoNao" name="adaptacaoFormatos" value="não">
+                        <label for="adaptacaoNao">Não</label>
+                    </div>
+                </div>
+                <div class="form-group conditional-field" id="formatosSecundariosField">
+                    <label for="formatosSecundarios">Quais formatos secundários?</label>
+                    <textarea id="formatosSecundarios" name="formatosSecundarios" placeholder="Ex: versão para banner, versão curta para stories, CTA para email."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="palavrasProibidas">📌 Palavras proibidas / frases que deseja evitar (opcional)</label>
+                    <textarea id="palavrasProibidas" name="palavrasProibidas" placeholder="Ex: Evitar frases como ‘realize seu sonho’ ou ‘o futuro começa aqui’."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoesAdicionais">📎 Observações adicionais (opcional)</label>
+                    <textarea id="observacoesAdicionais" name="observacoesAdicionais" placeholder="Detalhes, contextos, instruções criativas ou algo específico que deseja incluir."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Gerar Copy Visual</button>
+            </form>
+
+            <div class="loading" id="loadingState">
+                <div class="spinner"></div>
+                <p>Gerando sua copy visual, por favor aguarde...</p>
+            </div>
+
+            <div class="result" id="resultState">
+                <h3>✨ Copy Visual Gerada:</h3>
+                <div class="result-content" id="copyContent"></div>
+                <button class="copy-btn" onclick="copyResult()">Copiar Copy</button>
+            </div>
+
+            <div class="error" id="errorState">
+                <p>Ocorreu um erro ao gerar a copy. Por favor, tente novamente.</p>
+            </div>
+        </div>
+    </div>
+
+   <script src="VisualCopyGenerator.js"></script>
+</body>
+</html>

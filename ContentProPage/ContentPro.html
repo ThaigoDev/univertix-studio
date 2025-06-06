@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Copy Jornalística Premium - Content Pro</title>
+     <link rel="stylesheet" href="ContentPro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Gerador de Copy Jornalística Premium</h1>
+            <p>Crie conteúdos informativos, credíveis e otimizados para SEO.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="contentProForm">
+                <div class="form-group">
+                    <label for="temaCentral">🧩 Tema central da matéria / conteúdo <span class="required">*</span></label>
+                    <input type="text" id="temaCentral" name="temaCentral" placeholder="Ex: Nova estrutura do Hospital Veterinário da Univértix." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="objetivoConteudo">🧭 Objetivo do conteúdo <span class="required">*</span></label>
+                    <select id="objetivoConteudo" name="objetivoConteudo" required>
+                        <option value="">Selecione o objetivo</option>
+                        <option value="Informar de forma imparcial">Informar de forma imparcial</option>
+                        <option value="Gerar autoridade sobre o tema">Gerar autoridade sobre o tema</option>
+                        <option value="Atrair visitantes orgânicos (SEO)">Atrair visitantes orgânicos (SEO)</option>
+                        <option value="Engajar públicos específicos">Engajar públicos específicos</option>
+                        <option value="Divulgar uma novidade institucional">Divulgar uma novidade institucional</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="palavrasChave">🔍 Palavras-chave ou termos para SEO (se houver)</label>
+                    <input type="text" id="palavrasChave" name="palavrasChave" placeholder="Ex: faculdade de medicina veterinária em MG, estrutura hospital veterinário">
+                </div>
+
+                <div class="form-group">
+                    <label>🧱 Estrutura desejada <span class="required">*</span></label>
+                    <div class="option-grid">
+                        <div class="option-item">
+                            <input type="radio" id="estruturaNoticia" name="estruturaDesejada" value="Notícia (lead, desenvolvimento, desfecho)" required>
+                            <label for="estruturaNoticia">Notícia</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="estruturaReportagem" name="estruturaDesejada" value="Reportagem (abordagem mais profunda e contextual)">
+                            <label for="estruturaReportagem">Reportagem</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="estruturaArtigo" name="estruturaDesejada" value="Artigo de opinião institucional">
+                            <label for="estruturaArtigo">Artigo de opinião institucional</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="estruturaListaGuia" name="estruturaDesejada" value="Lista/guia informativo">
+                            <label for="estruturaListaGuia">Lista/Guia</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="estruturaRelease" name="estruturaDesejada" value="Release institucional">
+                            <label for="estruturaRelease">Release Institucional</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="publicoAlvo">🧠 Público-alvo <span class="required">*</span></label>
+                    <select id="publicoAlvo" name="publicoAlvo" required>
+                        <option value="">Selecione o público</option>
+                        <option value="Estudantes do ensino médio">Estudantes do ensino médio</option>
+                        <option value="Pais de alunos">Pais de alunos</option>
+                        <option value="Comunidade local">Comunidade local</option>
+                        <option value="Profissionais da área">Profissionais da área</option>
+                        <option value="Seguidores da instituição">Seguidores da instituição</option>
+                        <option value="Público geral">Público geral</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>🗞️ Tom da comunicação <span class="required">*</span></label>
+                    <div class="option-grid">
+                        <div class="option-item">
+                            <input type="radio" id="tomNeutroDireto" name="tomComunicacao" value="Jornalístico neutro e direto" required>
+                            <label for="tomNeutroDireto">Neutro e direto</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="tomInformativoLeve" name="tomComunicacao" value="Informativo com leveza">
+                            <label for="tomInformativoLeve">Informativo com leveza</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="tomInstitucionalAutoridade" name="tomComunicacao" value="Institucional com autoridade">
+                            <label for="tomInstitucionalAutoridade">Institucional com autoridade</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="tomInspiradorHumano" name="tomComunicacao" value="Inspirador e humano">
+                            <label for="tomInspiradorHumano">Inspirador e humano</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="tomFormalTecnico" name="tomComunicacao" value="Formal e técnico">
+                            <label for="tomFormalTecnico">Formal e técnico</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="infoObrigatorias">🧾 Informações obrigatórias no conteúdo <span class="required">*</span></label>
+                    <textarea id="infoObrigatorias" name="infoObrigatorias" placeholder="Ex: Citar que o hospital está aberto ao público. Incluir nomes dos professores envolvidos." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagemPrincipal">🎯 Mensagem principal <span class="required">*</span></label>
+                    <textarea id="mensagemPrincipal" name="mensagemPrincipal" placeholder="Qual a ideia-chave que o leitor deve guardar?" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="fonteReferencia">📚 Fonte / referência / base do conteúdo</label>
+                    <textarea id="fonteReferencia" name="fonteReferencia" placeholder="Ex: Link de artigo, release interno, briefing institucional, dados de pesquisa, depoimentos, etc."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>🪪 Deseja assinar com nome institucional ou autor? <span class="required">*</span></label>
+                    <div class="option-grid">
+                        <div class="option-item">
+                            <input type="radio" id="assinaturaMarca" name="assinatura" value="Assinatura da marca" required>
+                            <label for="assinaturaMarca">Assinatura da marca (ex: Comunicação Univértix)</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="assinaturaAutor" name="assinatura" value="Nome de autor específico">
+                            <label for="assinaturaAutor">Nome de autor específico</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="assinaturaNenhuma" name="assinatura" value="Sem assinatura">
+                            <label for="assinaturaNenhuma">Sem assinatura</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group conditional-field" id="nomeAutorField">
+                    <label for="nomeAutor">Nome do Autor:</label>
+                    <input type="text" id="nomeAutor" name="nomeAutor" placeholder="Nome completo do autor">
+                </div>
+
+                <div class="form-group">
+                    <label>📤 Canais de distribuição (multi-formato) <span class="required">*</span></label>
+                    <div class="option-grid">
+                        <div class="option-item">
+                            <input type="checkbox" id="canalSite" name="canaisDistribuicao" value="Site/blog" required>
+                            <label for="canalSite">Site/blog</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="canalLinkedIn" name="canaisDistribuicao" value="LinkedIn">
+                            <label for="canalLinkedIn">LinkedIn</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="canalInstagram" name="canaisDistribuicao" value="Instagram (versão adaptada)">
+                            <label for="canalInstagram">Instagram</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="canalEmail" name="canaisDistribuicao" value="E-mail marketing">
+                            <label for="canalEmail">E-mail marketing</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="canalWhatsApp" name="canaisDistribuicao" value="WhatsApp institucional">
+                            <label for="canalWhatsApp">WhatsApp</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="canalNewsletter" name="canaisDistribuicao" value="Newsletter">
+                            <label for="canalNewsletter">Newsletter</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="checkbox" id="canalImprensa" name="canaisDistribuicao" value="Imprensa / release">
+                            <label for="canalImprensa">Imprensa / Release</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>🖼️ Precisa de variação/resumo para redes sociais? <span class="required">*</span></label>
+                    <div class="option-item">
+                        <input type="radio" id="variacaoSim" name="variacaoRedesSociais" value="sim" required>
+                        <label for="variacaoSim">Sim</label>
+                    </div>
+                    <div class="option-item">
+                        <input type="radio" id="variacaoNao" name="variacaoRedesSociais" value="não">
+                        <label for="variacaoNao">Não</label>
+                    </div>
+                </div>
+                <div class="conditional-field" id="variacaoRedesSociaisFields">
+                    <div class="form-group">
+                        <label for="maxCaracteres">Quantos caracteres no máximo?</label>
+                        <input type="number" id="maxCaracteres" name="maxCaracteres" placeholder="Ex: 280">
+                    </div>
+                    <div class="form-group">
+                        <label>Adaptar título para post (sim/não)?</label>
+                        <div class="option-item">
+                            <input type="radio" id="adaptarTituloSim" name="adaptarTitulo" value="sim">
+                            <label for="adaptarTituloSim">Sim</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="adaptarTituloNao" name="adaptarTitulo" value="não">
+                            <label for="adaptarTituloNao">Não</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Incluir hashtags?</label>
+                        <div class="option-item">
+                            <input type="radio" id="hashtagsSim" name="incluirHashtags" value="sim">
+                            <label for="hashtagsSim">Sim</label>
+                        </div>
+                        <div class="option-item">
+                            <input type="radio" id="hashtagsNao" name="incluirHashtags" value="não">
+                            <label for="hashtagsNao">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="frasesEvitar">🔒 Conteúdos ou frases a evitar (opcional)</label>
+                    <textarea id="frasesEvitar" name="frasesEvitar" placeholder="Ex: Evitar linguagem excessivamente publicitária; não usar “melhor do Brasil”."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoesAdicionais">📝 Observações adicionais (opcional)</label>
+                    <textarea id="observacoesAdicionais" name="observacoesAdicionais" placeholder="Instruções extras, contexto institucional, diretrizes editoriais específicas, etc."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Gerar Copy Jornalística</button>
+            </form>
+
+            <div class="loading" id="loadingState">
+                <div class="spinner"></div>
+                <p>Gerando sua copy jornalística, por favor aguarde...</p>
+            </div>
+
+            <div class="result" id="resultState">
+                <h3>✨ Copy Jornalística Gerada:</h3>
+                <div class="result-content" id="copyContent"></div>
+                <button class="copy-btn" onclick="copyResult()">Copiar Copy</button>
+            </div>
+
+            <div class="error" id="errorState">
+                <p>Ocorreu um erro ao gerar a copy. Por favor, tente novamente.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="ContentPro.js"></script>
+</body>
+</html>
