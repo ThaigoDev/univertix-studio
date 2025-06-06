@@ -63,7 +63,8 @@
         }
 
         .logo {
-            font-size: 5rem;
+            font-size: 5rem; 
+
             margin-bottom: 30px;
             background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ef4444);
             background-size: 200% 200%;
@@ -72,7 +73,9 @@
             background-clip: text;
             animation: gradientShift 3s ease-in-out infinite;
         }
-
+        .logo-img  {
+            height: 30vh;
+        }
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
