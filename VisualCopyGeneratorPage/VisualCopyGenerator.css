@@ -1,244 +1,419 @@
-   * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fundo gradiente fornecido, mantido para consistência */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px; /* Padding geral para o corpo em telas maiores */
+    display: flex; /* Usado para centralizar o container */
+    justify-content: center;
+    align-items: flex-start; /* Alinha ao topo para que o conteúdo possa rolar */
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    color: #333; /* Cor de texto padrão para o corpo */
+}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
+/* Contêiner principal */
+.container {
+    max-width: 800px;
+    width: 95%; /* Ocupa 95% da largura da tela */
+    margin: 20px auto; /* Centraliza o container e adiciona margem vertical */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com navegadores WebKit */
+    padding: 0; /* O padding será aplicado internamente nos subelementos */
+}
 
-        .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
+/* Cabeçalho */
+.header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 30px 20px; /* Padding adaptável */
+    text-align: center;
+}
 
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
+.header h1 {
+    font-size: 2.5rem; /* Tamanho base */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
 
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
+.header p {
+    font-size: 1.1rem; /* Tamanho base */
+    opacity: 0.9;
+}
 
-        .form-container {
-            padding: 40px;
-        }
+/* Contêiner do formulário */
+.form-container {
+    padding: 40px 20px; /* Padding adaptável */
+}
 
-        .form-group {
-            margin-bottom: 25px;
-        }
+.form-group {
+    margin-bottom: 25px;
+}
 
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
 
-        .required {
-            color: #e74c3c;
-        }
+.required {
+    color: #e74c3c;
+}
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #fafafa;
-        }
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+}
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px; /* Altura mínima para a textarea */
+}
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
+/* Foco nos campos de input/textarea/select */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
 
-        .tone-grid, .format-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
-        }
+/* Grid para opções de rádio/checkbox (tom, formato, etc.) */
+.tone-grid, .format-grid {
+    display: grid;
+    /* Colunas que se adaptam: mín de 150px, preenchendo o espaço disponível */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
 
-        .option-item {
-            position: relative;
-        }
+.option-item {
+    position: relative;
+}
 
-        .option-item input[type="radio"],
-        .option-item input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-            z-index: -1; /* send to back */
-        }
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1; /* send to back */
+}
 
-        .option-item label {
-            display: block;
-            padding: 15px;
-            background: #f8f9fa;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
+.option-item label {
+    display: block;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem; /* Ajuste para caber melhor em grids responsivos */
+}
 
-        .option-item input[type="radio"]:checked + label,
-        .option-item input[type="checkbox"]:checked + label {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
+.option-item input[type="radio"]:checked + label,
+.option-item input[type="checkbox"]:checked + label {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
 
-        .submit-btn {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 30px;
-        }
+/* Botão de submissão */
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-        }
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
 
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
 
-        .loading {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
+/* Indicador de carregamento */
+.loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    color: #667eea;
+    font-size: 1.1rem;
+}
 
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
-        }
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
-        .result {
-            display: none;
-            margin-top: 30px;
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            border-left: 5px solid #667eea;
-        }
+/* Mensagem de erro */
+.error {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8d7da;
+    color: #721c24;
+    border-radius: 8px;
+    border-left: 5px solid #dc3545;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
 
-        .result h3 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
+/* Seção de resultados */
+.result {
+    display: none;
+    margin-top: 30px;
+    padding: 25px 20px; /* Padding adaptável */
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 5px solid #667eea;
+}
 
-        .result-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            white-space: pre-wrap;
-            line-height: 1.6;
-            font-size: 1rem;
-        }
+.result h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
 
-        .copy-btn {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
+.result-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-wrap; /* Preserva quebras de linha e espaços */
+    line-height: 1.6;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Adiciona rolagem horizontal se o conteúdo for muito largo */
+}
 
-        .copy-btn:hover {
-            background: #218838;
-        }
+/* Botão de copiar */
+.copy-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
 
-        .error {
-            display: none;
-            margin-top: 20px;
-            padding: 15px;
-            background: #f8d7da;
-            color: #721c24;
-            border-radius: 8px;
-            border-left: 5px solid #dc3545;
-        }
+.copy-btn:hover {
+    background: #218838;
+}
 
-        /* Classes para campos condicionais */
-        .conditional-field {
-            display: none; /* Inicia oculto */
-        }
+/* Classes para campos condicionais (visibilidade via JavaScript) */
+.conditional-field {
+    display: none; /* Inicia oculto */
+}
 
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .form-container {
-                padding: 20px;
-            }
-            
-            .tone-grid, .format-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+/* --- Media Queries para Responsividade --- */
+
+/* Para telas de até 768px (tablets em retrato e celulares) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reduz o padding geral do corpo */
+        align-items: flex-start; /* Alinha ao topo para evitar que o container fique muito comprimido */
+    }
+
+    .container {
+        width: 100%; /* Ocupa a largura total menos o padding do body */
+        border-radius: 10px; /* Bordas um pouco menos arredondadas */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin: 10px auto; /* Ajusta margem vertical */
+    }
+
+    .header {
+        padding: 25px 15px; /* Reduz padding do header */
+    }
+
+    .header h1 {
+        font-size: 2rem; /* Reduz tamanho da fonte do título */
+    }
+
+    .header p {
+        font-size: 1rem; /* Reduz tamanho da fonte do parágrafo */
+    }
+
+    .form-container {
+        padding: 30px 15px; /* Reduz padding do formulário */
+    }
+
+    .form-group label {
+        font-size: 1rem; /* Ajusta tamanho da fonte dos rótulos */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group textarea,
+    .form-group select {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .form-group textarea {
+        min-height: 120px; /* Reduz a altura mínima da textarea */
+    }
+
+    .tone-grid, .format-grid { /* Ajuste para grids responsivos, torna-se uma coluna */
+        grid-template-columns: 1fr;
+        gap: 10px; /* Reduz o espaçamento entre as opções */
+    }
+
+    .option-item label {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        padding: 15px;
+        font-size: 1.1rem;
+        margin-top: 20px;
+    }
+
+    .result {
+        padding: 20px 15px; /* Reduz padding do resultado */
+    }
+
+    .result h3 {
+        font-size: 1.2rem;
+    }
+
+    .result-content {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .copy-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Para telas muito pequenas (celulares em retrato) */
+@media (max-width: 480px) {
+    body {
+        padding: 5px; /* Padding mínimo para o corpo */
+    }
+
+    .container {
+        border-radius: 8px;
+        margin: 5px auto;
+    }
+
+    .header {
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        padding: 20px 10px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group textarea,
+    .form-group select {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+    }
+
+    .tone-option label {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+
+    .result {
+        padding: 15px 10px;
+    }
+
+    .result h3 {
+        font-size: 1.1rem;
+    }
+
+    .result-content {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .copy-btn {
+        padding: 7px 12px;
+        font-size: 0.85rem;
+    }
+
+    .loading p {
+        font-size: 0.9rem;
+    }
+}

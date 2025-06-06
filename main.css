@@ -1,3 +1,4 @@
+/* Reset básico e tipografia */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +9,11 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: #0a0a0a;
     color: white;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    min-height: 100vh; /* Garante que o background ocupe toda a altura da viewport */
+    display: flex; /* Usado para centralizar o container */
+    justify-content: center;
+    align-items: flex-start; /* Alinha ao topo para que o conteúdo possa rolar */
 }
 
 /* Background animado */
@@ -32,9 +37,11 @@ body {
 
 .container {
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 95%; /* Ocupa 95% da largura da tela para responsividade */
+    margin: 20px auto; /* Centraliza o container e adiciona margem vertical */
+    padding: 0 20px; /* Padding interno para o conteúdo, ajustado nas media queries */
     position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima do background animado */
 }
 
 /* Header melhorado */
@@ -63,8 +70,9 @@ body {
 }
 
 .logo {
-    font-size: 5rem; 
+    font-size: 5rem; /* Tamanho base do ícone (se fosse texto) */
     margin-bottom: 30px;
+    /* Estilos de gradiente para texto/ícone, se aplicável */
     background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ef4444);
     background-size: 200% 200%;
     -webkit-background-clip: text;
@@ -72,9 +80,13 @@ body {
     background-clip: text;
     animation: gradientShift 3s ease-in-out infinite;
 }
+
 .logo-img {
-    height: 30vh;
+    height: 30vh; /* Altura responsiva para a imagem do logo */
+    max-height: 200px; /* Limite máximo para a imagem em telas muito grandes */
+    width: auto; /* Mantém a proporção */
 }
+
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -124,6 +136,7 @@ body {
 
 .tools-grid {
     display: grid;
+    /* Colunas que se adaptam: mínimo de 350px, preenchendo o espaço disponível */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
     margin-bottom: 80px;
@@ -140,7 +153,7 @@ body {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    group: hover;
+    /* group: hover; - Esta propriedade não é CSS padrão, provavelmente para JS/Tailwind */
 }
 
 .tool-card::before {
@@ -150,9 +163,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(59, 130, 246, 0.1) 0%, 
-        rgba(139, 92, 246, 0.1) 50%, 
+    background: linear-gradient(135deg,
+        rgba(59, 130, 246, 0.1) 0%,
+        rgba(139, 92, 246, 0.1) 50%,
         rgba(239, 68, 68, 0.1) 100%);
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -256,9 +269,9 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.3), 
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
         transparent);
     transition: left 0.6s ease;
 }
@@ -336,6 +349,7 @@ body {
     gap: 15px;
     font-weight: 600;
     font-size: 1.2rem;
+    color: #f9fafb; /* Garante que o texto 'Univértix' seja visível */
 }
 
 .color-dots {
@@ -343,7 +357,13 @@ body {
     gap: 8px;
 }
 
-.color-dot {
+/* Os "color-dots" eram emojis no HTML, mas para estilização real via CSS, você precisaria de elementos
+   HTML como divs para aplicar essas classes. Por exemplo:
+   <div class="color-dot red"></div> <div class="color-dot white"></div> <div class="color-dot blue"></div>
+   No seu HTML, eles são emojis "❤️🤍💙", então este CSS não será aplicado diretamente a eles.
+   Se a intenção é ter pontos coloridos estilizados, o HTML precisaria ser ajustado.
+*/
+/* .color-dot {
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -352,13 +372,33 @@ body {
 
 .blue { background: #3b82f6; }
 .white { background: #ffffff; }
-.red { background: #ef4444; }
+.red { background: #ef4444; } */
+
 
 /* Responsividade aprimorada */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 30px; /* Aumenta um pouco o padding lateral para telas maiores */
+    }
+}
+
 @media (max-width: 1024px) {
     .tools-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Muda para 2 colunas em telas de tablet maiores */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
+    }
+
+    .header h1 {
+        font-size: 3.5rem;
+    }
+
+    .header .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .header .description {
+        font-size: 1.1rem;
     }
 }
 
@@ -371,12 +411,13 @@ body {
         padding: 60px 0 50px;
     }
 
-    .logo {
-        font-size: 3rem;
+    .logo-img {
+        height: 25vh; /* Ajusta a altura da imagem do logo */
+        max-height: 150px;
     }
 
     .header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         letter-spacing: -1px;
     }
 
@@ -385,58 +426,155 @@ body {
         letter-spacing: 2px;
     }
 
+    .header .description {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
     .tools-grid {
+        /* Muda para 1 coluna em telas de tablet menores e celulares */
         grid-template-columns: 1fr;
         gap: 25px;
     }
 
     .tool-card {
         padding: 40px 30px;
+        border-radius: 20px; /* Bordas um pouco menos arredondadas */
     }
 
     .tool-icon {
         font-size: 4rem;
+        margin-bottom: 20px;
     }
 
     .tool-card h3 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .tool-card p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .tool-features {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .tool-features li {
+        font-size: 0.95rem;
+        padding: 6px 0;
+    }
+
+    .select-btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+
+    .footer {
+        padding: 40px 0;
+    }
+
+    .footer h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer p {
+        font-size: 1rem;
+    }
+
+    .univertix-brand {
+        font-size: 1.1rem;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .header {
+        padding: 50px 0 40px;
+    }
+
+    .logo-img {
+        height: 20vh; /* Altura menor para o logo em celulares pequenos */
+        max-height: 120px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header .subtitle {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .header .description {
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
     }
-}
 
-/* Animações de entrada */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(60px);
+    .tool-card {
+        padding: 30px 20px;
+        border-radius: 15px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .tool-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
     }
-}
 
-.tool-card {
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
+    .tool-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
 
-.tool-card:nth-child(1) { animation-delay: 0.1s; }
-.tool-card:nth-child(2) { animation-delay: 0.2s; }
-.tool-card:nth-child(3) { animation-delay: 0.3s; }
-.tool-card:nth-child(4) { animation-delay: 0.4s; }
-.tool-card:nth-child(5) { animation-delay: 0.5s; } /* Added for the new card */
+    .tool-card p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
 
+    .tool-features {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
 
-/* Efeitos especiais */
-.floating {
-    animation: floating 6s ease-in-out infinite;
-}
+    .tool-features li {
+        font-size: 0.85rem;
+        padding: 4px 0;
+    }
 
-@keyframes floating {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    .select-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .univertix-brand {
+        font-size: 1rem;
+    }
 }
