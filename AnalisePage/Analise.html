@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Conteúdo - Univértix</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="Analise.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Análise de Conteúdo</h1>
+            <p>Avalie suas legendas e roteiros com base nos critérios da Univértix.</p>
+        </div>
+        <div class="form-container">
+            <form id="analysisForm">
+                <div class="form-group">
+                    <label for="content">Cole ou digite o conteúdo para análise <span class="required">*</span></label>
+                    <textarea id="content" name="content" required placeholder="Ex: Legenda, roteiro de vídeo, texto para redes sociais, etc."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Analisar Conteúdo</button>
+            </form>
+
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Analisando, aguarde...</p>
+            </div>
+
+            <div id="result" class="result">
+                <h3>Resultados da Análise</h3>
+                <div class="chart-container">
+                    <canvas id="analysisChart"></canvas>
+                </div>
+                <div id="result-content" class="result-content"></div>
+                <button class="copy-btn" onclick="copyResult()">Copiar Análise</button>
+            </div>
+
+            <div id="error" class="error">
+                Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente.
+            </div>
+        </div>
+    </div>
+
+    <script src="Analise.js"></script>
+</body>
+</html>
