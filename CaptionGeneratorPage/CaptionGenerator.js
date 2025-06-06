@@ -92,7 +92,7 @@ Público-alvo: ${publicoDescriptions[data.publico]}`;
             }
 
             prompt += `\n\nEstrutura desejada:
-- TÍTULO EM CAIXA ALTA
+- TÍTULO EM CAIXA ALTA seguido de "•" 
 - Corpo direto e criativo
 - Emojis usados com propósito
 - CTA com slogan institucional (escolha entre: "Venha ser Univértix.", "Escolha Univértix.", "Seja Univértix.") + 💙🤍❤️
