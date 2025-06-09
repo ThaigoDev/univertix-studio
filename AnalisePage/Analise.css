@@ -167,11 +167,12 @@ body {
     line-height: 1.6;
     font-size: 1rem;
     border: 1px solid #e0e0e0;
+    margin-top: 20px; /* Adicionado margem superior para separar dos gráficos */
     margin-bottom: 20px;
     overflow-x: auto; /* Adiciona rolagem horizontal se o conteúdo for muito largo */
 }
 
-/* Contêiner do gráfico */
+/* Contêiner do gráfico de radar */
 .chart-container {
     position: relative;
     width: 100%; /* Ocupa 100% da largura disponível */
@@ -181,6 +182,58 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* NOVO: Contêiner do gráfico de progressão (barra) */
+#progressionChartContainer {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Altura fixa para o gráfico de barra */
+    margin-top: 20px; /* Espaçamento entre os gráficos */
+    margin-bottom: 20px; /* Espaçamento abaixo do gráfico */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para as novas seções de análise */
+.analysis-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 20px; /* Espaçamento entre as seções */
+}
+
+.analysis-section h4 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+}
+
+.analysis-section h4 .icon {
+    font-size: 1.3em;
+    margin-right: 8px;
+    color: #667eea; /* Cor para os ícones de emoji */
+}
+
+.analysis-section p,
+.analysis-section ul,
+.analysis-section ol {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-left: 15px; /* Indentação para listas e parágrafos */
+}
+
+.analysis-section ul {
+    list-style-type: disc;
+}
+
+.analysis-section ol {
+    list-style-type: decimal;
 }
 
 /* Botão de copiar */
@@ -277,6 +330,11 @@ body {
         height: 250px; /* Reduz a altura do gráfico para telas menores */
     }
 
+    /* Ajustes para o gráfico de progressão em telas menores */
+    #progressionChartContainer {
+        height: 120px; /* Reduz a altura do gráfico de progressão em telas menores */
+    }
+
     .copy-btn {
         padding: 8px 15px;
         font-size: 0.9rem;
@@ -335,6 +393,11 @@ body {
 
     .chart-container {
         height: 200px; /* Altura menor para o gráfico em telas muito pequenas */
+    }
+
+    /* Ajustes para o gráfico de progressão em telas muito pequenas */
+    #progressionChartContainer {
+        height: 100px; /* Altura menor para o gráfico de progressão em telas muito pequenas */
     }
 
     .copy-btn {

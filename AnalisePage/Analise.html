@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Análise de Conteúdo</h1>
+            <h1>📈 Análise de Conteúdo</h1>
             <p>Avalie suas legendas e roteiros com base nos critérios da Univértix.</p>
         </div>
         <div class="form-container">
@@ -20,7 +20,7 @@
                     <textarea id="content" name="content" required placeholder="Ex: Legenda, roteiro de vídeo, texto para redes sociais, etc."></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Analisar Conteúdo</button>
+                <button type="submit" class="submit-btn">🔍 Analisar Conteúdo</button>
             </form>
 
             <div id="loading" class="loading">
@@ -32,6 +32,34 @@
                 <h3>Resultados da Análise</h3>
                 <div class="chart-container">
                     <canvas id="analysisChart"></canvas>
+                </div>
+                <div id="progressionChartContainer">
+                    <canvas id="progressionChart"></canvas>
+                </div>
+                
+                <div id="keywordsSection" class="analysis-section">
+                    <h4><span class="icon">🔑</span> Palavras-chave e Relevância</h4>
+                    <ul id="keywordsList"></ul>
+                </div>
+
+                <div id="sentimentSection" class="analysis-section">
+                    <h4><span class="icon">😊</span> Sentimento do Conteúdo</h4>
+                    <p id="sentimentText"></p>
+                </div>
+
+                <div id="readabilitySection" class="analysis-section">
+                    <h4><span class="icon">📚</span> Nível de Leitura</h4>
+                    <p id="readabilityText"></p>
+                </div>
+
+                <div id="titlesSection" class="analysis-section">
+                    <h4><span class="icon">✨</span> Títulos Sugeridos</h4>
+                    <ol id="titlesList"></ol>
+                </div>
+
+                <div id="toneSection" class="analysis-section">
+                    <h4><span class="icon">🎭</span> Variação de Tom</h4>
+                    <p id="toneText"></p>
                 </div>
                 <div id="result-content" class="result-content"></div>
                 <button class="copy-btn" onclick="copyResult()">Copiar Análise</button>
