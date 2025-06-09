@@ -311,11 +311,19 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.tool-card.analise .tool-icon { /* New style for Content Analysis */
+.tool-card.analise .tool-icon {
     background: linear-gradient(135deg, #8b5cf6, #d946ef); /* Purple gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* NOVO ESTILO: Entrevista Master */
+.tool-card.entrevista .tool-icon {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Um gradiente de laranja para vermelho suave */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* FIM DO NOVO ESTILO */
 
 /* Footer elegante */
 .footer {
@@ -358,10 +366,10 @@ body {
 }
 
 /* Os "color-dots" eram emojis no HTML, mas para estilização real via CSS, você precisaria de elementos
-   HTML como divs para aplicar essas classes. Por exemplo:
-   <div class="color-dot red"></div> <div class="color-dot white"></div> <div class="color-dot blue"></div>
-   No seu HTML, eles são emojis "❤️🤍💙", então este CSS não será aplicado diretamente a eles.
-   Se a intenção é ter pontos coloridos estilizados, o HTML precisaria ser ajustado.
+    HTML como divs para aplicar essas classes. Por exemplo:
+    <div class="color-dot red"></div> <div class="color-dot white"></div> <div class="color-dot blue"></div>
+    No seu HTML, eles são emojis "❤️🤍💙", então este CSS não será aplicado diretamente a eles.
+    Se a intenção é ter pontos coloridos estilizados, o HTML precisaria ser ajustado.
 */
 /* .color-dot {
     width: 16px;
@@ -485,7 +493,7 @@ body {
     }
 
     .footer p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .univertix-brand {

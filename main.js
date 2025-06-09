@@ -11,7 +11,8 @@ function redirectTo(tool) {
             'roteiros': './ScriptGeneratorPage/ScriptGenerator.html', 
             'design': './VisualCopyGeneratorPage/VisualCopyGenerator.html',
             'materias': './ContentProPage/ContentPro.html',
-            'analise': './AnalisePage/Analise.html' // New URL for Content Analysis
+            'analise': './AnalisePage/Analise.html',
+            'entrevista': './EntrevistaPage/EntrevistaPage.html' // Nova URL para a página de entrevista
         };
         
         if (urls[tool]) {
@@ -60,7 +61,7 @@ document.querySelectorAll('.tool-card').forEach(card => {
     observer.observe(card);
 });
 
-// Efeito de cursor customizado
+// Efeito de cursor customizado (se você tiver um elemento .cursor no seu HTML)
 document.addEventListener('mousemove', (e) => {
     const cursor = document.querySelector('.cursor');
     if (cursor) {
