@@ -92,9 +92,10 @@ Público-alvo: ${publicoDescriptions[data.publico]}`;
             }
 
             prompt += `\n\nEstrutura desejada:
-- TÍTULO EM CAIXA ALTA seguido de "•" 
-- Corpo direto e criativo
+- TÍTULO EM CAIXA ALTA seguido de "•" em casos onde o  tema contém somente abreviação (Ex: OBAdm,CREDIVÉRTIX)
+- Corpo direto e criativo sem frases clichês
 - Emojis usados com propósito
+- Deve conter algo sempre como :  "Acesse agora: univertix.edu.br (link na bio)"  antes da CTA
 - CTA com slogan institucional (escolha entre: "Venha ser Univértix.", "Escolha Univértix.", "Seja Univértix.") + 💙🤍❤️
 - Hashtags relevantes ao final
 
