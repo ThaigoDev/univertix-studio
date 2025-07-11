@@ -95,7 +95,7 @@ Público-alvo: ${publicoDescriptions[data.publico]}`;
 - TÍTULO EM CAIXA ALTA seguido de "•"  somente em casos onde o  tema contém somente abreviação (Ex: OBAdm,CREDIVÉRTIX)... Em casos de títulos grandes, deixe sem Caixa Normal e sempre terminar o título com um emoji temático
 - Corpo direto e criativo sem frases clichês e humanizado, sempre parecendo como se um humano estivesse escrito à mão
 - Emojis usados com propósito
-- Deve conter algo sempre como :  "Acesse agora: univertix.edu.br (link na bio)"  antes da CTA
+- Deve conter algo sempre como :  "Acesse agora: univertix.edu.br (link na bio)"  antes da CTA caso o contexto tenha necessiade de redirecionar o usuário para o site
 - CTA com slogan institucional (escolha entre: "Venha ser Univértix.", "Escolha Univértix.", "Seja Univértix.") + 💙🤍❤️
 - Hashtags relevantes ao final
 
