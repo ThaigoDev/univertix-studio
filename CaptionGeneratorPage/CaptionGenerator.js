@@ -92,7 +92,7 @@ Público-alvo: ${publicoDescriptions[data.publico]}`;
             }
 
             prompt += `\n\nEstrutura desejada:
-- TÍTULO EM CAIXA ALTA seguido de "•" em casos onde o  tema contém somente abreviação (Ex: OBAdm,CREDIVÉRTIX)
+- TÍTULO EM CAIXA ALTA seguido de "•"  somente em casos onde o  tema contém somente abreviação (Ex: OBAdm,CREDIVÉRTIX)... Em casos de títulos grandes, deixe sem Caixa Normal e sempre terminar o título com um emoji temático
 - Corpo direto e criativo sem frases clichês
 - Emojis usados com propósito
 - Deve conter algo sempre como :  "Acesse agora: univertix.edu.br (link na bio)"  antes da CTA
